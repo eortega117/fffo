@@ -1,13 +1,10 @@
 .pr-screen {
-  max-width: 620px;
+  max-width: 760px;
   margin: 0 auto;
-  min-height: calc(100vh - 91px);
-  display: flex;
-  align-items: center;
-  padding: 32px 24px;
+  padding: 64px 24px;
 }
 
-.pr-panel { width: 100%; }
+.pr-panel { width: 100%; max-width: 620px; }
 
 .pr-eyebrow {
   font-family: var(--font-display);
@@ -72,13 +69,8 @@
   color: var(--text-muted);
   margin: 0 0 28px;
 }
-.pr-status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--pos-te);
-  flex-shrink: 0;
-}
+.pr-status--loading { color: var(--blue-hover); }
+.pr-status--error { color: var(--red); }
 
 .pr-help summary {
   font-size: 14px;
@@ -102,4 +94,74 @@
 
 @media (max-width: 520px) {
   .pr-panel h1 { font-size: 27px; }
+}
+
+/* ============ RESULTS ============ */
+.pr-results-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+.pr-results-head h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 24px;
+  margin: 0 0 4px;
+}
+.pr-league-meta {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.pr-results-note {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin: 0 0 24px;
+}
+
+.pr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+}
+.pr-table th {
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding: 0 12px 10px;
+  border-bottom: 1px solid var(--border);
+}
+.pr-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.pr-table tr:last-child td { border-bottom: none; }
+.pr-table th:not(:first-child),
+.pr-table td:not(:first-child) {
+  text-align: right;
+}
+
+.pr-team-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+.pr-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--surface-raised);
+}
+.pr-avatar--placeholder {
+  border: 1px solid var(--border-light);
 }

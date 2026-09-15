@@ -25,28 +25,50 @@
 </header>
 
 <main class="pr-screen">
-  <div class="pr-panel">
+  <div class="pr-panel" id="pr-panel">
     <span class="pr-eyebrow">Power Rankings</span>
     <h1>Enter your Sleeper league</h1>
     <p class="pr-copy">Paste your league ID and we'll pull your rosters, records, and season stats straight from Sleeper — no login required. From there you'll be able to tune how much weight goes to positions, recent form, and outside rankings.</p>
 
     <form class="pr-form" id="league-form">
       <label for="league-id-input" class="pr-label">Sleeper League ID</label>
-      <input type="text" id="league-id-input" class="pr-input" placeholder="e.g. 918204103046656000" autocomplete="off" disabled>
-      <button type="submit" class="btn btn--primary pr-submit" disabled>Get Power Rankings</button>
+      <input type="text" id="league-id-input" class="pr-input" placeholder="e.g. 918204103046656000" autocomplete="off" inputmode="numeric">
+      <button type="submit" class="btn btn--primary pr-submit" id="pr-submit">Get Teams</button>
     </form>
 
-    <p class="pr-status">
-      <span class="pr-status-dot"></span>
-      Building this next — the league lookup isn't wired up yet.
-    </p>
+    <p class="pr-status" id="pr-status" hidden></p>
 
     <details class="pr-help">
       <summary>Where do I find my league ID?</summary>
       <p>Open your league in the Sleeper app or on sleeper.com, then look at the URL — it's the long number after <code>/leagues/</code>. You can also find it under League Settings.</p>
     </details>
   </div>
+
+  <div class="pr-results" id="pr-results" hidden>
+    <div class="pr-results-head">
+      <div>
+        <h2 id="pr-league-name">League</h2>
+        <p id="pr-league-meta" class="pr-league-meta"></p>
+      </div>
+      <button class="btn btn--ghost" id="pr-change-league">Change league</button>
+    </div>
+    <p class="pr-results-note">Sorted by record for now — the full customizable power ranking formula comes next.</p>
+    <table class="pr-table">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Record</th>
+          <th>PF</th>
+          <th>PA</th>
+        </tr>
+      </thead>
+      <tbody id="pr-table-body"></tbody>
+    </table>
+  </div>
 </main>
+
+<script src="app.js"></script>
+
 
 </body>
 </html>
