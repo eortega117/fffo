@@ -52,11 +52,12 @@
       </div>
       <button class="btn btn--ghost" id="pr-change-league">Change league</button>
     </div>
-    <p class="pr-results-note">Sorted by record for now — the full customizable power ranking formula comes next.</p>
+    <p class="pr-results-note">Power ranking score = 25% Points For + 20% Record (incl. league-median game) + 7.5% QB + 15% RB + 15% WR + 5% TE + 5% Recent Form, normalized to a 100-point scale.</p>
     <table class="pr-table">
       <thead>
         <tr>
           <th>Team</th>
+          <th>Score</th>
           <th>Record</th>
           <th>PF</th>
           <th>PA</th>
@@ -64,6 +65,8 @@
       </thead>
       <tbody id="pr-table-body"></tbody>
     </table>
+
+    <div class="pr-position-grid" id="pr-position-grid"></div>
   </div>
 </main>
 

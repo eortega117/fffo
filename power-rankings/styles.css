@@ -1,5 +1,5 @@
 .pr-screen {
-  max-width: 760px;
+  max-width: 920px;
   margin: 0 auto;
   padding: 64px 24px;
 }
@@ -164,4 +164,81 @@
 }
 .pr-avatar--placeholder {
   border: 1px solid var(--border-light);
+}
+
+.pr-score-cell {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--blue-hover);
+}
+
+/* ============ POSITION BREAKDOWN ============ */
+.pr-position-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.pr-pos-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.pr-pos-card h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+  margin: 0 0 2px;
+}
+
+.pr-pos-sub {
+  font-size: 12px;
+  color: var(--text-faint);
+  margin: 0 0 14px;
+}
+
+.pr-pos-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pr-pos-list li {
+  display: grid;
+  grid-template-columns: 20px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13.5px;
+}
+.pr-pos-list li:last-child { border-bottom: none; }
+
+.pr-pos-rank {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.pr-pos-team {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pr-pos-value {
+  font-weight: 700;
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .pr-position-grid { grid-template-columns: 1fr; }
 }
